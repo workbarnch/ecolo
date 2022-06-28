@@ -4,6 +4,7 @@ import json
 import os
 import time
 
+
 def generate_excel(data):
     coeff = data.get('coeff')
     file_name = f"{data.get('questionnaire')}.xlsx"
@@ -22,7 +23,8 @@ def generate_excel(data):
                 for q in data.get('q'):
                     if row[2].value == q:
                         sheet.cell(row=index, column=4).value = data.get('q').get(q)
-                    else: sheet.cell(row=index, column=4).value = ""
+                    else:
+                        sheet.cell(row=index, column=4).value = 0
             wb.active = 6
             sheet = wb.active
             sheet['N7'].value = 1
