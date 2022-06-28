@@ -10,7 +10,7 @@ def index():
     return jsonify(main(request.json))
 
 
-PORT = 5000
+PORT = 5550
 if __name__ == '__main__':
     print(f'Server started in port {PORT}')
     app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', PORT)))
