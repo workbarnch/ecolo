@@ -64,7 +64,7 @@ def read_excel_data(file_name):
             "estimated_profit_client": sheet['D34'].value,
             "deviation_degree": sheet['B24'].value,
         }
-        # os.system(f'rm -rf tmp {file_name} ')
+        os.system(f'rm -rf tmp {file_name} ')
         return data
     else:
         return {
