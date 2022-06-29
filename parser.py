@@ -35,7 +35,10 @@ def generate_excel(data):
             time.sleep(1)
             return read_excel_data(file_name)
         except Exception as _ex:
-            print(_ex);
+            return {
+                'status': False,
+                'message': _ex
+            }
     else:
         return {
             "status": False
