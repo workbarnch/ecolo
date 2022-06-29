@@ -20,11 +20,11 @@ def generate_excel(data):
             wb.active = 6
             sheet = wb.active
             for index, row in enumerate(sheet.rows, start=1):
+                sheet.cell(row=index, column=4).value = None
                 for q in data.get('q'):
                     if row[2].value == q:
                         sheet.cell(row=index, column=4).value = data.get('q').get(q)
-                    else:
-                        sheet.cell(row=index, column=4).value = 0
+
             wb.active = 6
             sheet = wb.active
             sheet['N7'].value = 1
@@ -61,7 +61,7 @@ def read_excel_data(file_name):
             "estimated_profit_client": sheet['D34'].value,
             "deviation_degree": sheet['B24'].value,
         }
-        os.system(f'rm -rf tmp {file_name} ')
+        # os.system(f'rm -rf tmp {file_name} ')
         return data
     else:
         return {
