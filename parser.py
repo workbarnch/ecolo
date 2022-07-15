@@ -1,6 +1,4 @@
 from openpyxl import load_workbook
-from openpyxl.utils.cell import get_column_letter
-import json
 import os
 import time
 
