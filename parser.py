@@ -60,7 +60,7 @@ def read_excel_data(file_name):
             "estimated_revenue_client": sheet['D33'].value,
             "estimated_profit_lower": sheet['B34'].value,
             "estimated_profit_upper": sheet['C34'].value,
-            "estimated_profit_client": "#value",
+            "estimated_profit_client": sheet['D34'].value,
             "deviation_degree": sheet['B24'].value,
             "min_lavel_bank_normality": sheet['C20'].value,
             "min_lavel_bank_coherence": sheet['C21'].value
