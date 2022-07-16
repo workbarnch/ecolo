@@ -28,7 +28,7 @@ def generate_excel(data):
             sheet['K1'].value = data.get('bank_id')
             wb.save(file_name)
             time.sleep(1)
-            os.system('rm -rf tmp')
+            # os.system('rm -rf tmp')
             os.system(f"libreoffice --headless --convert-to xlsx {file_name} --outdir tmp")
             time.sleep(1)
             return read_excel_data(file_name)
@@ -39,7 +39,8 @@ def generate_excel(data):
             }
     else:
         return {
-            "status": False
+            "status": False,
+            "message": "Это АНКЕТА еще не готов"
         }
 
 
@@ -59,7 +60,7 @@ def read_excel_data(file_name):
             "estimated_revenue_client": sheet['D33'].value,
             "estimated_profit_lower": sheet['B34'].value,
             "estimated_profit_upper": sheet['C34'].value,
-            "estimated_profit_client": sheet['D34'].value,
+            "estimated_profit_client": "#value",
             "deviation_degree": sheet['B24'].value,
             "min_lavel_bank_normality": sheet['C20'].value,
             "min_lavel_bank_coherence": sheet['C21'].value
@@ -68,7 +69,8 @@ def read_excel_data(file_name):
         return data
     else:
         return {
-            'status': False
+            "status": False,
+            "message": "Это АНКЕТА еще не готовв"
         }
 
 
