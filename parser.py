@@ -28,14 +28,14 @@ def generate_excel(data):
             sheet['K1'].value = data.get('bank_id')
             wb.save(file_name)
             time.sleep(1)
-            # os.system('rm -rf tmp')
+            os.system('rm -rf tmp')
             os.system(f"libreoffice --headless --convert-to xlsx {file_name} --outdir tmp")
             time.sleep(1)
             return read_excel_data(file_name)
         except Exception as _ex:
             return {
                 'status': False,
-                'message': _ex
+                'message': str(_ex)
             }
     else:
         return {
