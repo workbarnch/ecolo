@@ -27,6 +27,8 @@ def generate_excel(data):
             sheet = wb.active
             if (data.get('degree_deviation')):
                 sheet['B24'].value = data.get('degree_deviation')
+            if (data.get('corrective')):
+               sheet['F23'].value = data.get('corrective')
             sheet['K1'].value = data.get('bank_id')
             wb.save(file_name)
             time.sleep(1)
