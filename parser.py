@@ -69,7 +69,7 @@ def read_excel_data(file_name):
             "min_lavel_bank_normality": sheet['C20'].value,
             "min_lavel_bank_coherence": sheet['C21'].value
         }
-        # os.system(f'rm -rf tmp {file_name} ')
+        os.system(f'rm -rf tmp {file_name} ')
         return data
     else:
         return {
